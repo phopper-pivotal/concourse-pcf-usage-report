@@ -42,26 +42,26 @@ Here is how you can set up the pipeline on your own Concourse server:
 ##### Configuration steps  
 
 1. Clone the sample git repository on your local machine  
-     __clone https://github.com/pivotalservices/concourse-pcf-usage-report.git__  
-     __cd concourse-pcf-usage-report__  
+     `clone https://github.com/pivotalservices/concourse-pcf-usage-report.git`
+     `cd concourse-pcf-usage-report`
 
 1. Setup the pipeline credentials file  
   * Make a copy of the sample credentials file  
-  __cp ci/pipeline/credentials.yml.sample ci/pipeline/credentials.yml__  
+  `cp ci/pipeline/credentials.yml.sample ci/pipeline/credentials.yml`
 
   * Edit _ci/pipeline/credentials.yml_ and fill out all the required credentials:  
-_```git-project-url```:_ the URL of the git repository containing the pipeline scripts  
-_```pcf-api-endpoint```:_ targeted PCF API endpoint (e.g. ```https://api.run.mydomain.com```)  
-_```pcf-apps-domain```:_ targeted PCF applications domain (e.g. ```run.mydomain.com```)   
-_```pcf-sys-admin-user```:_ PCF admin user ID to login to cf API (e.g. ```admin```)   
-_```pcf-sys-admin-user-password```:_ password of PCF admin user above  
-_```pcf-deploy-name```:_ ID or label for the targeted PCF deployment (e.g. ```production```)   
-_```s3-bucket```:_ ID of the AWS S3 bucket to upload the usage report to (e.g. ```mys3bucket```)   
-_```s3-access-key-id```:_ access key of the user with write access to the AWS S3 bucket  
-_```s3-secret-access-key```:_ Secret access key of the user with write access to the AWS S3 bucket       
-_```s3-region_name```:_ AWS S3 bucket region name (e.g. ```us-west-1```)   
-_```email-from```:_ the email address of the notification sender   (e.g. ```myemail@gmail.com```)  
-_```email-to```:_ the list of comma separated destination emails without encoding  (e.g. ```him@there.com,her@here.net```)   
+`git-project-url`: the URL of the git repository containing the pipeline scripts  
+`pcf-api-endpoint`: targeted PCF API endpoint (e.g. ```https://api.run.mydomain.com```)  
+`pcf-apps-domain`: targeted PCF applications domain (e.g. ```run.mydomain.com```)   
+`pcf-sys-admin-user`: PCF admin user ID to login to cf API (e.g. ```admin```)   
+`pcf-sys-admin-user-password`: password of PCF admin user above  
+`pcf-deploy-name`: ID or label for the targeted PCF deployment (e.g. ```production```)   
+`s3-bucket`: ID of the AWS S3 bucket to upload the usage report to (e.g. ```mys3bucket```)   
+`s3-access-key-id`: access key of the user with write access to the AWS S3 bucket  
+`s3-secret-access-key`: Secret access key of the user with write access to the AWS S3 bucket       
+`s3-region_name`: AWS S3 bucket region name (e.g. ```us-west-1```)   
+`email-from`: the email address of the notification sender   (e.g. ```myemail@gmail.com```)  
+`email-to`: the list of comma separated destination emails without encoding  (e.g. ```him@there.com,her@here.net```)   
 
 3. Configure the sample pipeline in Concourse with the following commands:  
    `fly -t <your-concourse-alias> set-pipeline -p pcf-usage-pipeline -c ci/pipeline/pcf-usage-report-simple.yml -l ci/pipeline/credentials.yml`
