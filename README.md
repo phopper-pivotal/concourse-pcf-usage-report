@@ -50,7 +50,6 @@ Here is how you can set up the pipeline on your own Concourse server:
   __cp ci/pipeline/credentials.yml.sample ci/pipeline/credentials.yml__  
 
   * Edit _ci/pipeline/credentials.yml_ and fill out all the required credentials:  
-  .  
 _```git-project-url```:_ the URL of the git repository containing the pipeline scripts  
 _```pcf-api-endpoint```:_ targeted PCF API endpoint (e.g. ```https://api.run.mydomain.com```)  
 _```pcf-apps-domain```:_ targeted PCF applications domain (e.g. ```run.mydomain.com```)   
@@ -63,7 +62,7 @@ _```s3-secret-access-key```:_ Secret access key of the user with write access to
 _```s3-region_name```:_ AWS S3 bucket region name (e.g. ```us-west-1```)   
 _```email-from```:_ the email address of the notification sender   (e.g. ```myemail@gmail.com```)  
 _```email-to```:_ the list of comma separated destination emails without encoding  (e.g. ```him@there.com,her@here.net```)   
-.
+
 3. Configure the sample pipeline in Concourse with the following commands:  
    `fly -t <your-concourse-alias> set-pipeline -p pcf-usage-pipeline -c ci/pipeline/pcf-usage-report-simple.yml -l ci/pipeline/credentials.yml`
 
