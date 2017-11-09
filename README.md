@@ -42,14 +42,14 @@ Here is how you can set up the pipeline on your own Concourse server:
 ##### Configuration steps  
 
 1. Clone the sample git repository on your local machine  
-     `clone https://github.com/pivotalservices/concourse-pcf-usage-report.git`
+     `git clone https://github.com/pivotalservices/concourse-pcf-usage-report.git`
      `cd concourse-pcf-usage-report`
 
 1. Setup the pipeline credentials file  
   * Make a copy of the sample credentials file  
   `cp ci/pipeline/credentials.yml.sample ci/pipeline/credentials.yml`
 
-  * Edit _ci/pipeline/credentials.yml_ and fill out all the required credentials:  
+  * Edit `ci/pipeline/credentials.yml` and fill out all the required credentials:  
 `git-project-url`: the URL of the git repository containing the pipeline scripts  
 `pcf-api-endpoint`: targeted PCF API endpoint (e.g. ```https://api.run.mydomain.com```)  
 `pcf-apps-domain`: targeted PCF applications domain (e.g. ```run.mydomain.com```)   
