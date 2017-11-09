@@ -65,7 +65,7 @@ _```email-from```:_ the email address of the notification sender   (e.g. ```myem
 _```email-to```:_ the list of comma separated destination emails without encoding  (e.g. ```him@there.com,her@here.net```)   
 .
 3. Configure the sample pipeline in Concourse with the following commands:  
-   __fly -t <your-concourse-alias> set-pipeline -p pcf-usage-pipeline -c ci/pipeline/pcf-usage-report-simple.yml -l ci/pipeline/credentials.yml__  
+   `fly -t <your-concourse-alias> set-pipeline -p pcf-usage-pipeline -c ci/pipeline/pcf-usage-report-simple.yml -l ci/pipeline/credentials.yml`
 
 4. Access to the Concourse web interface, click on the list of pipelines, un-pause the ```pcf-usage-pipeline``` and then click on its link to visualize its pipeline diagram  
 
